@@ -5,6 +5,7 @@
 #include <iostream>
 #include <conio.h>
 #include <string.h>
+#include <stdbool.h>
 using namespace std;
 
 class contact
@@ -17,7 +18,7 @@ class contact
     public:
         contact(string, string, string, string, string);
         //Methodes declarees
-        void showContact(bool showFirstLine = false); 
+        void showContact(bool showFirstLine); 
         void editContact();
         void deleteContact();
         string getFirstName();
@@ -49,13 +50,12 @@ string contact::getFirstName()
     return firstName;
 }
 
-
 //Afficher un contact
-void contact::showContact(bool showFirstLine = false)
+void contact::showContact(bool showFirstLine = false)   //cette variable joue sur la firstLine (show or not)
 {
     if(showFirstLine)
         cout << "\n\nVoici les infos : " << endl;
-    cout << "\tPrenoms : " << firstName << endl;
+    cout << "\tPrenom(s) : " << firstName << endl;
     cout << "\tNom : " << lastName << endl;
     cout << "\tAdresse mail : " << email << endl;
     cout << "\tNumero domicile : " << phoneHome << endl;

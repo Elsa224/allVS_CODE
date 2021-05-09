@@ -18,7 +18,7 @@
 
 //Déclaration des constantes et des variables
 const int tailleInitialeRep = 20;   //tailleRep = taille du répertoire
-int tailleRep = tailleInitialeRep;
+int tailleRep = tailleInitialeRep, totalRep = 0;
 contact repertoire[tailleInitialeRep]; // répertoire de 'tailleRep' contacts
 
 //Menu du répertoire
@@ -45,61 +45,78 @@ void addContact()
     if (index >= 0)
     {
         cout << "Vous voulez ajouter un contact. Veuillez entrer les infos relatives a ce contact : " << endl;
-        cout << "\t\tPrenoms : "; cin  >> nameFirst;
-        cout << "\t\tNom : "; cin  >> nameLast ;
-        cout << "\t\tAdresse mail : "; cin  >> email ;
-        cout << "\t\tNumero domicile : "; cin  >> homePhone ;
-        cout << "\t\tNumero mobile : "; cin  >> mobilePhone ;
+        cout << "\t\tPrenom(s) : "; cin  >> nameFirst;
+        cout << "\t\tNom : "; cin  >> nameLast;
+        cout << "\t\tAdresse mail : "; cin  >> email;
+        cout << "\t\tNumero domicile : "; cin  >> homePhone;
+        cout << "\t\tNumero mobile : "; cin  >> mobilePhone;
 
         repertoire[index].setContact(nameFirst, nameLast, email, homePhone, mobilePhone);
-        repertoire[index].showContact();
+        repertoire[index].showContact(true);    //ici, on affiche la ligne "voici les infos" donc l'argument est à true
         tailleRep--;
+        totalRep++;
     }
+    else    
+        cout << "Desolee... Repertoire plein! ";    //A changer après avoir ajouté les fichiers
     
 }
 
 //Afficher tous les contacts
 void showContacts()
 {
-    
-    for (int i = 0; i < tailleInitialeRep; i++)
+    cout << "Voici la liste de tous les contacts : " << endl;
+    for (int i = 0; i < totalRep; i++)
+    {
         repertoire[i].showContact();
-    
+        cout << "\n" << endl;
+    } 
 }
 
 int main(int argc, char const *argv[])
 {
-    int menuChoix = menu();
-    switch (menuChoix)
+    system("cls");
+    int quitter = -1;   //pour quitter le programme
+    do 
     {
-        case 1: //ajouter un contact
-            addContact();   
-        break;
+        int menuChoix = menu(), retour = -1; 
+        switch (menuChoix)
+        {
+            case 1: //ajouter un contact
+                do
+                {
+                    system("cls");
+                    addContact();
+                    cout << "\n\nTapez 0 pour retourner au menu ou 1 pour ajouter un autre contact : ";
+                    cin >> retour ;
+                    system("cls"); 
+                }while (retour != 0);
+            break;
 
-        case 2: //ajouter un contact
-              
-        break;
+            case 2: //modifier un contact
+                
+            break;
 
-        case 3: //ajouter un contact
-              
-        break;
+            case 3: //rechercher un contact
+                
+            break;
 
-        case 4: //ajouter un contact
-              
-        break;
+            case 4: //supprimer un contact
+                
+            break;
 
-        case 5: //lister tous les contacts
-            showContacts();
-              
-        break;
+            case 5: //lister tous les contacts
+                showContacts();
+                system("pause");
+            break;
 
-        case 6: //ajouter un contact
-              
-        break;
-    
-        default:
-        break;
-    }
+            case 6: //Quitter l'application
+            default:
+                cout << "Merci et a bientot ! ! ! " << endl; 
+                exit(0);    //BYE BYE. 
+            break;
+        }
+
+    }while (quitter != 0);
 
     return 0;
 }
