@@ -13,7 +13,7 @@
  *  ajouterContact(), rechercherContact(), modifierContact(), supprimerContact(), listerRepertoire(), quitter() 
 */
 
-//Fichier contenant la classe contact() et ses méthodes
+//Fichier contenant les default librairies, la classe contact() et ses méthodes
 #include "contact.h"
 
 //Déclaration des constantes et des variables
