@@ -42,7 +42,6 @@ void EMPILER(PILE *P, int a)
     }
     else
         printf("La pile est pleine! Plus d'ajout possible");
-
 }
 
 //Fonction DEPILER()
