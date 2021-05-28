@@ -76,8 +76,7 @@ bool PILEPLEINE(PILE *P)
     if (P->sommet == taille)
         return true;  
     else
-        return false;
-        
+        return false;        
 }
 
 //Fonction afficherPILE
@@ -90,5 +89,4 @@ void afficherPILE(PILE *P)
         for (int i = P->sommet; i >= 0; i--) //l'affichage de la PILE est contraire à l'affichage d'un tableau normal
            printf(" | %d |\n", P->tab[i]);
     }
-
 }
