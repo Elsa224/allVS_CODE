@@ -7,10 +7,6 @@
 	    #define OS 32
     #endif
 #endif
-
-
-
-
 	    
 #ifdef __APPLE__
     #define OS 1

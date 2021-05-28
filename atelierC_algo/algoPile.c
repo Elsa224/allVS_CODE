@@ -63,6 +63,7 @@ int main( int argc, char const *argv[] )
             break;
 
             default:
+                //TODO A modifier plus tard : quand l'utilisateur veut planter mon programme
                 OS == 32 || OS == 64 ? system("cls") : system("clear");
                 printf("\nMenu principal");
                 printf("\n\t1.Empiler \n\t2.Depiler \n\t3.Afficher \n\t4.Verifier si la pile est vide \n\t5.Verifier si la pile est pleine \n\t6.exit");
