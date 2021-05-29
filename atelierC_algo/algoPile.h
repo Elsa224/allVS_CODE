@@ -95,10 +95,10 @@ void afficherPILE(PILE *P)
 void swap(PILE *P)
 {
     PILE pileTampon;
-    initPILE( &pileTampon);
+    initPILE( &pileTampon); //ne pas oublier d'init !
     int numBase, num, numSommet;
     numBase = DEPILER(P);    //On depile P et on sauvegarde l'element sommet dans numBase
-    
+
     while ( P->sommet != 0 ) //Tant qu'on atteint pas fin-1 de la pile, on dépile et on empile dans la pile tampon
         EMPILER( &pileTampon, DEPILER( P ) );
     numSommet = DEPILER(P);  //On depile le dernier element de la pile qui sera le sommet de la pileTampon
