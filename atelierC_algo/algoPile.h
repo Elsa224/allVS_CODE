@@ -23,6 +23,7 @@ int DEPILER(PILE *P);
 bool PILEVIDE(PILE *P);
 bool PILEPLEINE(PILE *P);
 void afficherPILE(PILE *P);
+void swap(PILE *P);   //Echanger la base de la pile avec le sommet
 /***********************************************/
 
 //Initialisation de la pile
@@ -88,4 +89,22 @@ void afficherPILE(PILE *P)
         for (int i = P->sommet; i >= 0; i--) //l'affichage de la PILE est contraire à l'affichage d'un tableau normal
            printf(" | %d |\n", P->tab[i]);
     }
+}
+
+//Ajout de swap(base, sommet)
+void swap(PILE *P)
+{
+    PILE pileTampon;
+    int numBase, count = 0, num, numSommet;
+    numBase = DEPILER(P);    //On depile P et on sauvegarde l'element sommet dans numBase
+    while ( count < P->sommet-1 ) //Tant qu'on atteint pas fin-1 de la pile, on dépile et on empile dans la pile tampon
+   {
+       num = DEPILER(P);
+       EMPILER( &pileTampon, num);
+       count++;  
+   }
+   numSommet = DEPILER(P);  //Le dernier 
+
+   
+     
 }
