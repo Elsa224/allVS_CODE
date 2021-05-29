@@ -8,14 +8,13 @@
 //Taille de la pile
 #define taille 10
 
-//Declaration du type pile
+//Declaration du type PILE
 struct pile
 {
    int tab[taille];      
    int sommet;   //permettra de pointer sur le premier element de la liste
 };
 typedef struct pile PILE;
-
 
 /****************** PROTOTYPES ****************/
 void initPILE(PILE *P);
@@ -79,7 +78,7 @@ bool PILEPLEINE(PILE *P)
         return false;        
 }
 
-//Fonction afficherPILE
+//Procedure afficherPILE
 void afficherPILE(PILE *P)
 {
     if( PILEVIDE( P ) )

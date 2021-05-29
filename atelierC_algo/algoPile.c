@@ -74,4 +74,5 @@ int main( int argc, char const *argv[] )
         printf("\nVoulez-vous continuer ? Tapez 0(Non) ou 1(Oui) : ");
         scanf("%d", &option);
     }
-    return 0;}
+    return 0;    
+}
