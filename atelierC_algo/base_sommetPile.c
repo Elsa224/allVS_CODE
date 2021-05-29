@@ -1,7 +1,7 @@
 /**
  * Date : May 29th, 2021
  * Author : Elsa Z.
- * Description : Echanger le bas de la pile avec le sommet de la pile
+ * Description : Echanger le bas de la pile avec le sommet de la pile (on peut le faire de "deux" manieres)
 */
 
 #include "algoPile.h"
@@ -9,7 +9,6 @@
 //Declaration des variables
 PILE p;
 int base, sommet;
-
 
 int main(int argc, char const *argv[])
 {
@@ -50,8 +49,10 @@ int main(int argc, char const *argv[])
                 else if( p.sommet < 2 )
                     printf("Veuillez empiler au moins 2 elements avant de faire un swap !");
                 else
+                {
                     swap( &p );
                     printf("\nL'echange a bien ete effectue ! Tapez 1 ensuite 3 pour l'afficher");
+                }
             break;
 
             case 5:

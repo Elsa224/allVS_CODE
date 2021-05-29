@@ -95,16 +95,18 @@ void afficherPILE(PILE *P)
 void swap(PILE *P)
 {
     PILE pileTampon;
-    int numBase, count = 0, num, numSommet;
+    initPILE( &pileTampon);
+    int numBase, num, numSommet;
     numBase = DEPILER(P);    //On depile P et on sauvegarde l'element sommet dans numBase
-    while ( count < P->sommet-1 ) //Tant qu'on atteint pas fin-1 de la pile, on dépile et on empile dans la pile tampon
-   {
-       num = DEPILER(P);
-       EMPILER( &pileTampon, num);
-       count++;  
-   }
-   numSommet = DEPILER(P);  //Le dernier 
+    
+    while ( P->sommet != 0 ) //Tant qu'on atteint pas fin-1 de la pile, on dépile et on empile dans la pile tampon
+        EMPILER( &pileTampon, DEPILER( P ) );
+    numSommet = DEPILER(P);  //On depile le dernier element de la pile qui sera le sommet de la pileTampon
 
+    //Maintenant on rempile dans la pile initiale avec numBase en base et numSommet au sommet
+    EMPILER( P, numBase );
+   while ( pileTampon.sommet != -1 )   //Tant que la pile tampon n'est pas vide, on depile
+       EMPILER( P, DEPILER( &pileTampon ) );
+   EMPILER(P, numSommet);   //On empile le sommet et c'est fini
    
-     
 }
