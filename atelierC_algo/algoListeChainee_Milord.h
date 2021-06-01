@@ -34,8 +34,8 @@ typedef struct cellule elementListe;
 void pabloInsererLISTE( LISTE Q )
 {
     //Allocation d'un nouvel élément, je te laisse faire la version malloc
-    elementListe *nouvelElement;    //pour le malloc il faut que l'element soit un pointeur donc j'ai modifie ca
-    nouvelElement = malloc( sizeof( struct cellule  ) );
+    elementListe *nouvelElement;
+    nouvelElement = malloc( sizeof( struct cellule ) ); //apparemment pour un malloc il faut que l'element soit un pointeur donc j'ai change
     printf( "Veuillez entrer la cle de votre element : " );
     scanf("%d", nouvelElement->valeur);
     Q->suivant = &nouvelElement; // succ [ pabloFirstElement ] pointe sur le nouvel élément
