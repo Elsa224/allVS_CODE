@@ -1,4 +1,3 @@
-/***Lady's algo header file*****/
 #include "headerBase.h"
 #include "os.h"
 
@@ -25,13 +24,29 @@ LISTE tete = NULL;
 
 //Initialisation de la liste : on sait qu'au debut, tete = NULL mais bon... a revoir
 
-//Fonction insererLISTE() en tete de liste
-LISTE insererLISTE( int num, LISTE L )
+//Fonction insererLISTE()
+LISTE insererLISTE( LISTE P )
 {
-    LISTE objet;
-    objet = ( LISTE )malloc( sizeof( struct cellule ) );
-    tete = objet;  //Comme on insere en tete, tete doit toujours pointer sur l'element qu'on insere
-    objet->valeur = num;
-    objet->suivant = L; //car le suivant pointe sur un element de type cellule (donc cellule)
-    return objet;
+    P = ( LISTE )malloc(  sizeof( struct cellule ) );   //Allouer un espace memoire pour l'element a ajouter
+    scanf( "%d", &P->valeur );   //saisir la valeur de l'element
+    P->suivant = tete;  //l'element insere sera en tete de liste
+    tete = P;   //et tete pointe maintenant sur l'element P
+    return P;
+}
+
+//Fonction rechercherElement()
+LISTE rechercherElement( int cle, LISTE P)
+{
+    
+}
+
+//Procedure afficherLISTE(LISTE P)
+void afficherLISTE( LISTE P )
+{
+    printf( "\n\nVoici votre liste :\n\t" );
+    while ( P != NULL)
+    {
+        printf(" | %d | --> ", P->valeur);
+        P = P->suivant;
+    }
 }
