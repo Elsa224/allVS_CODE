@@ -38,16 +38,25 @@ LISTE insererLISTE( LISTE P )
 //Fonction rechercherElement()
 LISTE rechercherElement( int cle, LISTE P)
 {
-    P->position = 0;
-    while ( P != NULL && P->valeur != cle )
+    //Si la liste est vide on retourne NULL
+    if (P == NULL)
+       return NULL;
+    else
     {
-        P = P->suivant;
-        P->position = P->position + 1;  
-
-    }                
-    if ( P->valeur == cle) 
-        return P;
-    return NULL ;
+        P->position = 0;
+        printf( "On rentre dans le while...\n" );
+        while ( P != NULL && P->valeur != cle )
+        {
+            printf( "\nDans le while... element pas trouve" );
+            P = P->suivant;
+            P->position = P->position + 1;  
+        }
+        printf( "\nOn sort du while...\n" );                
+        if ( P->valeur != cle) 
+            return NULL;
+        else
+            return P;
+    }
 }
         
 //Procedure afficherLISTE(LISTE P)
@@ -55,8 +64,18 @@ void afficherLISTE( LISTE P )
 {
     while ( P != NULL)
     {
-        printf("  | %d | <-- ", P->valeur);
+        printf(" | %d | <-- ", P->valeur);
         P = P->suivant;
     }
     printf( "NULL\n" );
+}
+
+//Fonction LISTEVIDE
+bool LISTEVIDE( LISTE P )
+{
+    if ( P == NULL )
+        return true;
+    else
+        return false;
+    
 }
