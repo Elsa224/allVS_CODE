@@ -8,7 +8,8 @@
  * qui est un pointeur sur une cellule.
  * Donc le type LISTE (la liste elle-meme) est un pointeur sur cette suite de cellules
  * 
-/*********************************************************/
+ ******************************************************************************
+*/
 
 
 //Declaration du type cellule
@@ -17,7 +18,7 @@ struct cellule
     int valeur;
     struct cellule *suivant;
 };
-typedef struct cellule *LISTE;
+typedef struct cellule * LISTE;
 
 //Tete de liste (on suppose liste vide)
 LISTE tete = NULL;
