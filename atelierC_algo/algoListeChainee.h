@@ -19,22 +19,18 @@ struct cellule
 };
 typedef struct cellule *LISTE;
 
-//Tete de liste
-LISTE tete;
+//Tete de liste (on suppose liste vide)
+LISTE tete = NULL;
 
 //Initialisation de la liste : on sait qu'au debut, tete = NULL mais bon... a revoir
 
 //Fonction insererLISTE() en tete de liste
-LISTE insererLISTE( int num, LISTE Q )
+LISTE insererLISTE( int num, LISTE L )
 {
-    LISTE L;
-    L = malloc( sizeof( struct cellule ) ); //allouer(L)
-    tete = &L;  //Comme on insere en tete, tete doit toujours pointer sur l'element qu'on insere
-    L->valeur = num;
-    L->suivant = Q; //car le suivant pointe sur un element de type cellule (donc cellule)
-    return L;
+    LISTE objet;
+    objet = malloc( sizeof( struct cellule ) ); //allouer(objet)
+    tete = objet;  //Comme on insere en tete, tete doit toujours pointer sur l'element qu'on insere
+    objet->valeur = num;
+    objet->suivant = L; //car le suivant pointe sur un element de type cellule (donc cellule)
+    return objet;
 }
-
-//je m'arrete la pour ce soir
-//je me demande meme si c'est juste
-//il va regarder aujourd'hui
