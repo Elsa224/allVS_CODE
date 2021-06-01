@@ -23,7 +23,7 @@ int main( int argc, char const *argv[] )
     scanf( "%d", &nombre );
     premierElement = insererLISTE( nombre, NULL );
 
-    //Creation de la liste : tete --> | 2 | suivant | --> | 4 | suivant | --> | 3 | suivant | --> | 5 | suivant | --> | premierElement | NULL |
+    //Creation de la liste : tete --> | 2 | --> | 4 | --> | 3 | --> | 5 | --> | premierElement | NULL |
     list = insererLISTE(2, insererLISTE( 4, insererLISTE( 3, insererLISTE( 5, premierElement ) ) ) ) ;
 
     //Affichage de la liste : tant qu'on a pas trouve NULL, on parcoure la liste et on affiche
