@@ -44,6 +44,13 @@ int main( int argc, char const *argv[] )
         printf( "Votre liste est vide !" );
     }
 
+    //Verifier si la liste est vide
+    if ( LISTEVIDE( list ) )
+        printf( "\n\nVotre liste est vide ! " );
+    else
+        printf( "\n\nVotre liste est non vide !" );
+
+
     //Rechercher element dans liste
     printf(  "\n\nQuel element dans la liste recherchez-vous ? : " );
     scanf( "%d", &element );
