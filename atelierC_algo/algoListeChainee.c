@@ -26,7 +26,6 @@ int main( int argc, char const *argv[] )
     pabloListe = &pabloFirstElement; // La liste dont le premier élément ( son succ ) est NULL donc liste vide
     int number;
     listeVide( pabloListe ) ? printf( "Liste vide\n" ) : printf( "Liste non vide\n" ); // après initialisation si nous sommes en fin de liste alors la liste est vide
-    // pabloInsererLISTE( pabloListe );
     pabloMultiInsererLISTE( 2 , pabloListe );
     printf( "Derniere cle entree est : %d\n", pabloListe->suivant->valeur );
     listeVide( pabloListe ) ? printf( "Liste non vide\n" )  : printf( "Liste vide\n" ); // après initialisation si nous sommes en fin de liste alors la liste est vide
