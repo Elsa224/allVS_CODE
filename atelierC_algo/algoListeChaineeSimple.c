@@ -27,6 +27,7 @@ int main( int argc, char const *argv[] )
     }
 
     //Affichage de la liste
+    printf( "\n\nVoici votre liste :\n\t" );
     afficherLISTE( list );
     
 

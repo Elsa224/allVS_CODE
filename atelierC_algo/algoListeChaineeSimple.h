@@ -43,10 +43,10 @@ LISTE rechercherElement( int cle, LISTE P)
 //Procedure afficherLISTE(LISTE P)
 void afficherLISTE( LISTE P )
 {
-    printf( "\n\nVoici votre liste :\n\t" );
     while ( P != NULL)
     {
         printf(" | %d | --> ", P->valeur);
         P = P->suivant;
     }
+    printf( "NULL\n" );
 }
