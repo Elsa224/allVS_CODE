@@ -36,26 +36,30 @@ LISTE insererLISTE( LISTE P )
 }
 
 //Fonction rechercherElement()
-LISTE rechercherElement( int cle, LISTE P)
+LISTE rechercherElement( int cle, LISTE P )
 {
+    bool trouve = false;    //flag (drapeau)
     //Si la liste est vide on retourne NULL
     if (P == NULL)
        return NULL;
     else
     {
-        P->position = 0;
-        printf( "On rentre dans le while...\n" );
-        while ( P != NULL && P->valeur != cle )
+        P->position = 1;
+        while ( P != NULL && !trouve )  //tant qu'on est pas encore arrive en fin de liste et que vrai
         {
-            printf( "\nDans le while... element pas trouve" );
-            P = P->suivant;
-            P->position = P->position + 1;  
+            //TODO revoir la position de l'element recherche plus tard
+            if ( P->valeur == cle)
+            {
+                trouve = true;
+                return P;
+            }
+            else
+            {
+                P = P->suivant;
+                P->position = P->position + 1; 
+            }  
         }
-        printf( "\nOn sort du while...\n" );                
-        if ( P->valeur != cle) 
-            return NULL;
-        else
-            return P;
+        return NULL;
     }
 }
         
