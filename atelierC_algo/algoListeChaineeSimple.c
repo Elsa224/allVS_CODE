@@ -10,13 +10,15 @@
 #include "algoListeChaineeSimple.h"
 
 //Declaration des variables
-LISTE list, elementListe, P;
-int nbElement;
+LISTE list, seekElement, P;
+int nbElement, element;
 
 //Programme pincipal
 int main( int argc, char const *argv[] )
 {
     tete = NULL;
+
+    //Creation de la liste
     printf( "\nQuelle est la taille de votre liste : " );
     scanf( "%d", &nbElement );
     printf( "\nVeuillez entrer les valeurs du dernier au premier s'il vous plait :\n" );
@@ -29,7 +31,15 @@ int main( int argc, char const *argv[] )
     //Affichage de la liste
     printf( "\n\nVoici votre liste :\n\t" );
     afficherLISTE( list );
-    
 
+    //Rechercher element dans liste
+    printf(  "\n\nQuel element dans la liste recherchez-vous ? : " );
+    scanf( "%d", &element );
+    seekElement = rechercherElement( element, list );
+    if ( seekElement == NULL)
+        printf( "Desolee. L'element recherche ne figure pas dans la liste" );
+    else
+        printf( "Nous avons trouve L'element ! %d se trouve a la position %d", seekElement->valeur, seekElement->position );
+    
     return 0;
 }

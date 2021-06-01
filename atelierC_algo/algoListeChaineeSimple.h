@@ -16,6 +16,7 @@ struct cellule
 {  
     int valeur;
     struct cellule *suivant;
+    int position;
 };
 typedef struct cellule *LISTE;
 
@@ -37,15 +38,24 @@ LISTE insererLISTE( LISTE P )
 //Fonction rechercherElement()
 LISTE rechercherElement( int cle, LISTE P)
 {
-    
-}
+    P->position = 0;
+    while ( P != NULL && P->valeur != cle )
+    {
+        P = P->suivant;
+        P->position = P->position + 1;  
 
+    }                
+    if ( P->valeur == cle) 
+        return P;
+    return NULL ;
+}
+        
 //Procedure afficherLISTE(LISTE P)
 void afficherLISTE( LISTE P )
 {
     while ( P != NULL)
     {
-        printf(" | %d | --> ", P->valeur);
+        printf("  | %d | <-- ", P->valeur);
         P = P->suivant;
     }
     printf( "NULL\n" );
