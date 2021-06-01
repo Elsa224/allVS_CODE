@@ -21,11 +21,10 @@ int main( int argc, char const *argv[] )
 
 
     LISTE pabloListe;
-    elementListe pabloFirstElement, anotherOne;
+    elementListe pabloFirstElement;
     pabloFirstElement.suivant = NULL; // Premier élément de la liste 
     pabloListe = &pabloFirstElement; // La liste dont le premier élément ( son succ ) est NULL donc liste vide
     int number;
-    tete = NULL; // Initialisation de la liste
     listeVide( pabloListe ) ? printf( "Liste vide\n" ) : printf( "Liste non vide\n" ); // après initialisation si nous sommes en fin de liste alors la liste est vide
     // pabloInsererLISTE( pabloListe );
     pabloMultiInsererLISTE( 2 , pabloListe );
