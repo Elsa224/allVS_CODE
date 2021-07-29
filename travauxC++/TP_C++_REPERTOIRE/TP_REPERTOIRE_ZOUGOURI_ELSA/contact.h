@@ -122,6 +122,29 @@ void contact::deleteContact(  )
     phoneMobile = ""; 
 }
 
+//Supprimer une ligne dans un fichier
+void eraseLine( string filePathToRead, int lineToErase)
+{
+    string Buffer = ""; //Variable contenant le texte à réécrire dans le fichier
+    ifstream MyFileIn( filePathToRead );
+    if ( MyFileIn ) //Si le fichier est trouvé
+    {
+        string myText;
+        int lineToDelete = 0;
+        while ( getline( MyFileIn, myText ) ) //on parcours le fichier et on initialise line à la ligne actuelle
+        {
+            lineToDelete++;
+            if( lineToDelete != lineToErase ) //Si la ligne atteinte est différente de la ligne à supprimer...
+                Buffer += myText + "\n"; //On ajoute le contenu de la ligne dans le contenu à réécrire
+        }
+    }
+    MyFileIn.close(); //On ferme le fichier en lecture
+ 
+    ofstream MyFileOut( filePathToRead ); //On ouvre ce même fichier en écriture
+    MyFileOut << Buffer; //On écris le texte dedans
+    MyFileOut.close(); //et on ferme le fichier
+}
+
 //Void to read and show a file
 void readAndShowFile ( string filePathToRead ) 
 {
@@ -141,6 +164,32 @@ void readAndShowFile ( string filePathToRead )
         //Ferme le fichier
         MyReadFile.close();
     }
+}  
+
+//Void to read and show a file
+int getNbContacts ( string filePathToRead ) 
+{
+    int nbContacts = 0;
+    if ( filePathToRead == "" ) 
+        cout << "Veuillez entrer le chemin absolu du fichier à lire s'il vous plait : ";
+    
+    else {
+        string myText;  //Variable qui va contenir le contenu du fichier
+        ifstream MyReadFile( filePathToRead );  //Le fichier est ouvert en lecture
+
+        //Fait une boucle afin de lire chaque ligne du fichier
+        while ( getline ( MyReadFile, myText ) ) 
+        {
+            //Output the text from the file
+            nbContacts++;
+        }
+        
+        //Ferme le fichier
+        MyReadFile.close();   
+    }
+
+    return nbContacts;
+
 }  
 
 //Void to write in a file
