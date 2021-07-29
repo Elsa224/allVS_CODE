@@ -74,7 +74,7 @@ void showContacts(  )
 
 int main( int argc, char const *argv[  ] )
 {
-    system( "cls" );
+    OS == 32 || OS == 64 ? system("cls") : system("clear");
     int quitter = -1;   //pour quitter le programme
     do 
     {

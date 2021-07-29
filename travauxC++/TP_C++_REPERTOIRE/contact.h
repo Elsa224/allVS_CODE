@@ -1,10 +1,12 @@
 /**
- * Creation et description de la classe contact()
+ * Creation et description de la classe contact(  )
 */
 
 #include "iostream"
 #include "string.h"
 #include "stdbool.h"
+#include "os.h"
+#include "fstream"  //Pour les fichiers
 using namespace std;
 
 class contact
@@ -15,7 +17,8 @@ class contact
     string phoneHome;   //Home
     string phoneMobile; //Mobile 
     public:
-        contact(string preNoms = "", string nom = "", string mail = "", string homePhone = "", string mobilePhone = "")
+        //Contact constructor
+        contact( string preNoms = "", string nom = "", string mail = "", string homePhone = "", string mobilePhone = "" )
         {
             firstName = preNoms;
             lastName = nom;
@@ -23,37 +26,35 @@ class contact
             phoneHome = homePhone ;
             phoneMobile = mobilePhone;
         }
-        //Methodes declarees
-        void showContact(bool showFirstLine); 
-        void editContact();
-        void deleteContact();
-        void setContact();
-        string getFirstName();
 
-        void setContact(string, string, string, string, string);   
+        //Methodes declarees
+        void showContact( bool showFirstLine ); 
+        void editContact(  );
+        void deleteContact(  );
+        void setContact(  );
+        string getFirstName(  );
+
+        void setContact( string preNoms = "", string nom = "", string mail = "", string numTelHome = "", string numTelMobile = "" )
+        {
+            firstName = preNoms;
+            lastName = nom;
+            email = mail;
+            phoneHome = numTelHome;
+            phoneMobile = numTelMobile;
+        }  
 };
 
-//Ce que ma classe contact fait
-void contact::setContact(string preNoms = "", string nom = "", string mail = "", string numTelHome = "", string numTelMobile = "")
-{
-    firstName = preNoms;
-    lastName = nom;
-    email = mail;
-    phoneHome = numTelHome;
-    phoneMobile = numTelMobile;
-}
-
-string contact::getFirstName()
+string contact::getFirstName(  )
 {
     return firstName;
 }
 
 //Afficher un contact
-void contact::showContact(bool showFirstLine = false)   //cette variable joue sur la firstLine (show or not)
+void contact::showContact( bool showFirstLine = false )   //cette variable joue sur la firstLine ( show or not )
 {
-    if(showFirstLine)
+    if( showFirstLine )
         cout << "\n\nVoici les infos : " << endl;
-    cout << "\tPrenom(s) : " << firstName << endl;
+    cout << "\tPrenom( s ) : " << firstName << endl;
     cout << "\tNom : " << lastName << endl;
     cout << "\tAdresse mail : " << email << endl;
     cout << "\tNumero domicile : " << phoneHome << endl;
@@ -61,7 +62,7 @@ void contact::showContact(bool showFirstLine = false)   //cette variable joue su
 }
 
 //EditChoice : choisir l'element du contact à modifier
-int editChoice()
+int editChoice(  )
 {
     int choix = -1;
     cout << "Que voulez-vous modifier ?" << endl;
@@ -75,12 +76,12 @@ int editChoice()
 }
 
 //Modifier un contact
-void contact::editContact()
+void contact::editContact(  )
 {
-    int choice = editChoice();
-    switch (choice)
+    int choice = editChoice(  );
+    switch ( choice )
     { 
-        case 1: //Modifier le(s) prenom(s)
+        case 1: //Modifier le( s ) prenom( s )
             cin >> firstName;
         break;
 
@@ -102,13 +103,13 @@ void contact::editContact()
 
         case -1 :   //si choice = -1, le user n'a rien choisi donc il recommence
         default:
-            editContact();
+            editContact(  );
         break;
     }  
 }
 
-//Supprimer un contact (toutes les infos == NULL)
-void contact::deleteContact()
+//Supprimer un contact ( toutes les infos == NULL )
+void contact::deleteContact(  )
 {
     firstName = "";
     lastName = ""; 
@@ -116,4 +117,6 @@ void contact::deleteContact()
     phoneHome = "";
     phoneMobile = ""; 
 }
+
+//Ecrire dans un fichier les contacts
 
