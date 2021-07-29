@@ -2,10 +2,9 @@
  * Creation et description de la classe contact()
 */
 
-#include <iostream>
-#include <conio.h>
-#include <string.h>
-#include <stdbool.h>
+#include "iostream"
+#include "string.h"
+#include "stdbool.h"
 using namespace std;
 
 class contact
@@ -21,19 +20,20 @@ class contact
         void showContact(bool showFirstLine); 
         void editContact();
         void deleteContact();
+        void setContact();
         string getFirstName();
 
         void setContact(string, string, string, string, string);   
 };
 
 //Ce que ma classe contact fait
-contact::contact(string preNoms = "", string nom = "", string mail = "", string numTelHome = "", string numTelMobile = "")
+contact::contact(string, string, string, string, string )
 {
-    firstName = preNoms;
-    lastName = nom;
-    email = mail;
-    phoneHome = numTelHome;
-    phoneMobile = numTelMobile;
+    firstName = "";
+    lastName = "";
+    email = "";
+    phoneHome = "" ;
+    phoneMobile = "";
 }
 
 void contact::setContact(string preNoms = "", string nom = "", string mail = "", string numTelHome = "", string numTelMobile = "")
