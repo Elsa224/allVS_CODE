@@ -70,7 +70,7 @@ void addContact(  )
         countContact++;
 
         //Ajout dans le fichier repertoire.txt
-        string infosToInsert =   to_string(countContact) + "-- " + nameFirst + "\t\t\t\t" + nameLast + "\t\t\t\t" + email + "\t\t\t\t" + homePhone + "\t\t\t\t" + mobilePhone;
+        string infosToInsert =  countContact + "-- " + nameFirst + "\t\t\t\t" + nameLast + "\t\t\t\t" + email + "\t\t\t\t" + homePhone + "\t\t\t\t" + mobilePhone;
         appendInFile( FILE_PATH, infosToInsert );
         cout << "\n\nLes infos ont bien été ajoutées !!" << endl;
 
