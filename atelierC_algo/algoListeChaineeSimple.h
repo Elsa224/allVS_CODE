@@ -10,7 +10,6 @@
  * 
 /*********************************************************/
 
-
 //Declaration du type cellule
 struct cellule
 {  
@@ -22,8 +21,6 @@ typedef struct cellule *LISTE;
 
 //Tete de liste (on suppose liste vide)
 LISTE tete = NULL;
-
-//Initialisation de la liste : on sait qu'au debut, tete = NULL mais bon... a revoir
 
 //Fonction insererLISTE()
 LISTE insererLISTE( LISTE P )
@@ -40,7 +37,7 @@ LISTE rechercherElement( int cle, LISTE P )
 {
     bool trouve = false;    //flag (drapeau)
     //Si la liste est vide on retourne NULL
-    if (P == NULL)
+    if ( LISTEVIDE( P ) )
        return NULL;
     else
     {
