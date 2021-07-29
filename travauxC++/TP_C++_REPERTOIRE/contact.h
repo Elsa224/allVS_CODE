@@ -34,15 +34,6 @@ class contact
 };
 
 //Ce que ma classe contact fait
-// contact::contact(string, string, string, string, string )
-// {
-//     firstName = "";
-//     lastName = "";
-//     email = "";
-//     phoneHome = "" ;
-//     phoneMobile = "";
-// }
-
 void contact::setContact(string preNoms = "", string nom = "", string mail = "", string numTelHome = "", string numTelMobile = "")
 {
     firstName = preNoms;
