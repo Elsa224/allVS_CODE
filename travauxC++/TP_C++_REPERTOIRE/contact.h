@@ -15,7 +15,14 @@ class contact
     string phoneHome;   //Home
     string phoneMobile; //Mobile 
     public:
-        contact(string, string, string, string, string);
+        contact(string preNoms = "", string nom = "", string mail = "", string homePhone = "", string mobilePhone = "")
+        {
+            firstName = preNoms;
+            lastName = nom;
+            email = mail;
+            phoneHome = homePhone ;
+            phoneMobile = mobilePhone;
+        }
         //Methodes declarees
         void showContact(bool showFirstLine); 
         void editContact();
@@ -27,14 +34,14 @@ class contact
 };
 
 //Ce que ma classe contact fait
-contact::contact(string, string, string, string, string )
-{
-    firstName = "";
-    lastName = "";
-    email = "";
-    phoneHome = "" ;
-    phoneMobile = "";
-}
+// contact::contact(string, string, string, string, string )
+// {
+//     firstName = "";
+//     lastName = "";
+//     email = "";
+//     phoneHome = "" ;
+//     phoneMobile = "";
+// }
 
 void contact::setContact(string preNoms = "", string nom = "", string mail = "", string numTelHome = "", string numTelMobile = "")
 {

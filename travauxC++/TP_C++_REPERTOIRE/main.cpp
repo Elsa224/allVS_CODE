@@ -89,7 +89,8 @@ int main( int argc, char const *argv[  ] )
                     cout << "\n\nTapez 0 pour retourner au menu ou 1 pour ajouter un autre contact : ";
                     cin >> retour ;
                     system( "cls" ); 
-                }while ( retour != 0 );
+                }
+                while ( retour != 0 );
             break;
 
             case 2: //modifier un contact
