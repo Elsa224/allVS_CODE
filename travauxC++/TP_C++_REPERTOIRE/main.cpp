@@ -4,28 +4,28 @@
  * 
  * 
  * Travail à faire : 
- * Ecrire un programme traduisant le comportement d'un répertoire (de contacts)
+ * Ecrire un programme traduisant le comportement d'un répertoire ( de contacts )
  * dans un téléphone
  * 
  * Astuces :
- * Uiliser les fichiers (créer un fichier REPERTOIRE)
+ * Uiliser les fichiers ( créer un fichier REPERTOIRE )
  * Ecrire les fonctions 
- *  ajouterContact(), rechercherContact(), modifierContact(), supprimerContact(), listerRepertoire(), quitter() 
+ *  ajouterContact(  ), rechercherContact(  ), modifierContact(  ), supprimerContact(  ), listerRepertoire(  ), quitter(  ) 
 */
 
-//Fichier contenant les default librairies, la classe contact() et ses méthodes
+//Fichier contenant les default librairies, la classe contact(  ) et ses méthodes
 #include "contact.h"
 
 //Déclaration des constantes et des variables
 const int tailleInitialeRep = 20;   //tailleRep = taille du répertoire
 int tailleRep = tailleInitialeRep, totalRep = 0;
-contact repertoire[tailleInitialeRep]; // répertoire de 'tailleRep' contacts
+contact repertoire[ tailleInitialeRep ]; // répertoire de 'tailleRep' contacts
 
 //Menu du répertoire
-int menu()
+int menu(  )
 {  
     int choixMenu = -1;
-    cout << "Bonjour et bienvenue ! :) Que voulez-vous faire ?" << endl;
+    cout << "Bonjour et bienvenue ! : ) Que voulez-vous faire ?" << endl;
     cout << "\t\t1 - Ajouter un contact" << endl;
     cout << "\t\t2 - Modifier un contact" << endl;
     cout << "\t\t3 - Rechercher un contact" << endl;
@@ -38,21 +38,21 @@ int menu()
 }
 
 //Ajouter un contact
-void addContact()
+void addContact(  )
 {
     string nameFirst, nameLast, email, homePhone, mobilePhone;
     int index = tailleInitialeRep - tailleRep;  
-    if (index >= 0)
+    if ( index >= 0 )
     {
         cout << "Vous voulez ajouter un contact. Veuillez entrer les infos relatives a ce contact : " << endl;
-        cout << "\t\tPrenom(s) : "; cin  >> nameFirst;
+        cout << "\t\tPrenom( s ) : "; cin  >> nameFirst;
         cout << "\t\tNom : "; cin  >> nameLast;
         cout << "\t\tAdresse mail : "; cin  >> email;
         cout << "\t\tNumero domicile : "; cin  >> homePhone;
         cout << "\t\tNumero mobile : "; cin  >> mobilePhone;
 
-        repertoire[index].setContact(nameFirst, nameLast, email, homePhone, mobilePhone);
-        repertoire[index].showContact(true);    //ici, on affiche la ligne "voici les infos" donc l'argument est à true
+        repertoire[ index ].setContact( nameFirst, nameLast, email, homePhone, mobilePhone );
+        repertoire[ index ].showContact( true );    //ici, on affiche la ligne "voici les infos" donc l'argument est à true
         tailleRep--;
         totalRep++;
     }
@@ -62,34 +62,34 @@ void addContact()
 }
 
 //Afficher tous les contacts
-void showContacts()
+void showContacts(  )
 {
     cout << "Voici la liste de tous les contacts : " << endl;
-    for (int i = 0; i < totalRep; i++)
+    for ( int i = 0; i < totalRep; i++ )
     {
-        repertoire[i].showContact();
+        repertoire[ i ].showContact(  );
         cout << "\n" << endl;
     } 
 }
 
-int main(int argc, char const *argv[])
+int main( int argc, char const *argv[  ] )
 {
-    system("cls");
+    system( "cls" );
     int quitter = -1;   //pour quitter le programme
     do 
     {
-        int menuChoix = menu(), retour = -1; 
-        switch (menuChoix)
+        int menuChoix = menu(  ), retour = -1; 
+        switch ( menuChoix )
         {
             case 1: //ajouter un contact
                 do
                 {
-                    system("cls");
-                    addContact();
+                    system( "cls" );
+                    addContact(  );
                     cout << "\n\nTapez 0 pour retourner au menu ou 1 pour ajouter un autre contact : ";
                     cin >> retour ;
-                    system("cls"); 
-                }while (retour != 0);
+                    system( "cls" ); 
+                }while ( retour != 0 );
             break;
 
             case 2: //modifier un contact
@@ -105,18 +105,18 @@ int main(int argc, char const *argv[])
             break;
 
             case 5: //lister tous les contacts
-                showContacts();
-                system("pause");
+                showContacts(  );
+                system( "pause" );
             break;
 
             case 6: //Quitter l'application
             default:
                 cout << "Merci et a bientot ! ! ! " << endl; 
-                exit(0);    //BYE BYE. 
+                exit( 0 );    //BYE BYE. 
             break;
         }
 
-    }while (quitter != 0);
+    }while ( quitter != 0 );
 
     return 0;
 }
