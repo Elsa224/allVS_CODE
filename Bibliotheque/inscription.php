@@ -156,7 +156,7 @@ if(!empty($_POST['username']) AND !empty($_POST['password']) AND !empty($_POST['
 </fieldset>
 
 <div id="reglement_ecrire"><h2>Carte « Adhérent »</h2>
-<ul><li> Une carte « Adhérent » sera délivrée aux usagers n’appartenant pas à l’Université Hassan II de Casablanca. Cette carte doit être présentée à chaque visite de la bibliothèque et est obligatoire pour toute opération de prêt.</li></ul>
+<ul><li> Une carte « Adhérent » sera délivrée aux usagers n’appartenant pas à l’ENSIT. Cette carte doit être présentée à chaque visite de la bibliothèque et est obligatoire pour toute opération de prêt.</li></ul>
 
     </div>
   </div>

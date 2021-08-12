@@ -102,14 +102,14 @@ CREATE TABLE IF NOT EXISTS `client` (
 INSERT INTO `client` (`id_client`, `nom_client`, `Email`, `date_naissance`, `adresse`, `Nb_emprunt`, `Date_inscription`, `MDP`) VALUES
 (1, 'Youssef', 'Jalil_Jerf@email.com', '1995-10-31', 'Youssef', 2, '2016-02-01', 'Youssef'),
 (2, 'Dadso', 'Haitham_Dadso@email.com', '1995-06-15', 'LAAAAAATER', 0, '2015-12-31', 'Seeerfie'),
-(3, 'Faraby', 'Yusuf_Faraby@email.com', '1994-12-25', 'Boulevard Bouchaib Doukali Num 15, Casablanca', 0, '2016-03-01', 'FarFar'),
-(4, 'JY-7', 'Youssef7jabbari@email.com', '1995-10-31', 'Boulevard El Fida Num 9, Casablanca', 5, '2007-07-07', 'ZarakiDono'),
-(5, 'Nkir', 'Dounia_Nkir@email.com', '1994-04-24', 'Boulevard Boulevard Num N, Casablanca', 0, '2016-03-21', 'NkirNkir'),
-(6, 'Mellouki', 'Zakaria_Mellouki', '1995-09-19', 'Boulevard BLVRD Num N, Casablanca', 0, '1995-09-19', 'JESUISZAK'),
+(3, 'Faraby', 'Yusuf_Faraby@email.com', '1994-12-25', 'Boulevard Général de Gaulle, Abidjan', 0, '2016-03-01', 'FarFar'),
+(4, 'JY-7', 'Youssef7jabbari@email.com', '1995-10-31', 'Avenue Pierre et Marie Curie, Abidjan', 5, '2007-07-07', 'ZarakiDono'),
+(5, 'Nkir', 'Dounia_Nkir@email.com', '1994-04-24', 'Boulevard Angoulvan, Abidjan', 0, '2016-03-21', 'NkirNkir'),
+(6, 'Mellouki', 'Zakaria_Mellouki', '1995-09-19', 'Avenue Valérie Giscard D_Estaing, Abidjan', 0, '1995-09-19', 'JESUISZAK'),
 (8, 'Youssef', 'Youssef.Faraby13', '2016-04-28', 'Youssef', 0, NULL, 'Youssef'),
-(9, 'Youssef faraby', 'Youssef@faraby.com', '2016-04-06', 'boulvar & 1', 0, '2016-04-17', '1234567'),
-(10, 'bouhaddioui', 'manar@gmail.com', '1995-06-11', 'boulvard la resistance ', 1, '2016-04-22', '123456789'),
-(11, 'Hidan', 'kill_yourself@email.com', '1986-06-06', 'machi so9ek ^^', 0, '2016-05-03', 'kill');
+(9, 'Youssef faraby', 'Youssef@faraby.com', '2016-04-06', 'avnue & 1', 0, '2016-04-17', '1234567'),
+(10, 'bouhaddioui', 'manar@gmail.com', '1995-06-11', 'avenue liberte ', 1, '2016-04-22', '123456789'),
+(11, 'Hidan', 'kill_yourself@email.com', '1986-06-06', 'machine soek ^^', 0, '2016-05-03', 'kill');
 
 -- --------------------------------------------------------
 

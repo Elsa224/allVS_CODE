@@ -104,7 +104,7 @@ if(!isset($_SESSION['connecter']))
 
 	<h2>Modalité de prêt</h2>
 		<ul>
-			<li>Pour toute opération de prêt, les étudiants de l’Université Hassan II de Casablanca sont tenus de déposer leur carte de d’étudiant au guichet de prêt.</li>
+			<li>Pour toute opération de prêt, les étudiants de l’ENSIT sont tenus de déposer leur carte d’étudiant au guichet de prêt.</li>
 			<li>La carte sera récupérée une fois le livre rendu.</li>
 		</ul>
 	<h2>Compte lecteur</h2>
